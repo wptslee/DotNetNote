@@ -12,6 +12,9 @@ namespace DotNetNote
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddMvc();
+            services.AddControllersWithViews();
+
             //services.AddRazorPages();
         }
 
@@ -29,6 +32,9 @@ namespace DotNetNote
 
             app.UseEndpoints(endpoints =>
             {
+                //endpoints.MapControllerRoute();
+                endpoints.MapDefaultControllerRoute();
+
                 //endpoints.MapRazorPages();
                 endpoints.MapGet("/", async context =>
                 {
